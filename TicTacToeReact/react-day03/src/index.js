@@ -66,6 +66,7 @@ function Game() {
     );
   }
 
+  {/* Main Return Statement. Builds the actual screen. Needs a start button*/}
   return (
     <div className="container">
       <div className="game">
