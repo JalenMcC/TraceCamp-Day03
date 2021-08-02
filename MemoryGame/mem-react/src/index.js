@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Start({onClick}, bg) {
+function Start({onClick, bg}) {
   return (
-    <button className = "start" onClick = {onClick} id={bg}>
+    <button className = {"start-" + bg} onClick = {onClick}>
       Start
     </button>
   );
@@ -15,7 +15,7 @@ function Start({onClick}, bg) {
 function Main() {
   const [level, setLevel] = useState(0); //literally just a storage for level
   const [correct, setCorrect] = useState(true);
-  const [color, setColor] = useState();
+  const [color, setColor] = useState("grey");
 
   function renderStartButton() {
     return(

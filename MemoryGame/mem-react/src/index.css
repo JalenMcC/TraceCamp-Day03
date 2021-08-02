@@ -7,16 +7,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.start {
+.start-grey {
+  justify-content: center;
+  margin: 20px;
+  border-color: black;
+  box-shadow: 0 12px 16px 0;
   color:white;
   font-size: x-large;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#red {
+.start-red {
+  color:white;
   background-color: red;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#green {
+.start-green {
+  color:white;
   background-color: lightgreen;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
