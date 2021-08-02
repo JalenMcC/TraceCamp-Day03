@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Start({onClick}, bg) {
+  return (
+    <button className = "start" onClick = {onClick} id={bg}>
+      Start
+    </button>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+function Main() {
+  const [level, setLevel] = useState(0); //literally just a storage for level
+  const [correct, setCorrect] = useState(true);
+  const [color, setColor] = useState();
+
+  function renderStartButton() {
+    return(
+      <Start 
+        onClick = {() => {
+          //reset useState values
+          if (correct === true) {
+            setColor("green");
+          }
+          else {
+            setColor("red");
+          }
+          setLevel(level + 1);
+          setCorrect(!correct);
+        }}
+
+        bg={color}
+      />
+    );
+  }
+
+  return (
+    <div>
+      <p>You clicked {level} times.</p>
+      <p>The color is {color}.</p>
+      <p>The answer is {correct ? "wrong" : "correct"}!</p>
+      <div className="start-button">{renderStartButton()}</div>
+    </div>
+  );
+}
+
+
+ReactDOM.render(<Main />, document.getElementById("root"));
+
